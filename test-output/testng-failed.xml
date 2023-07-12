@@ -1,14 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
-  <test thread-count="5" name="Test(failed)">
+  <listeners>
+    <listener class-name="com.listeners.TestListener"/>
+    <listener class-name="com.listeners.AnnotationTransformer"/>
+  </listeners>
+  <test thread-count="5" name="Amazon Home Page Test(failed)">
     <classes>
-      <class name="com.testCases.BaseTest">
-        <methods>
-          <include name="tearDown"/>
-          <include name="setUp"/>
-        </methods>
-      </class> <!-- com.testCases.BaseTest -->
       <class name="com.testCases.HomeTest">
         <methods>
           <include name="tearDown"/>
@@ -16,6 +14,10 @@
           <include name="setUp"/>
         </methods>
       </class> <!-- com.testCases.HomeTest -->
+    </classes>
+  </test> <!-- Amazon Home Page Test(failed) -->
+  <test thread-count="5" name="Amazon Mobile Page Test(failed)">
+    <classes>
       <class name="com.testCases.MobileTest">
         <methods>
           <include name="tearDown"/>
@@ -24,5 +26,5 @@
         </methods>
       </class> <!-- com.testCases.MobileTest -->
     </classes>
-  </test> <!-- Test(failed) -->
+  </test> <!-- Amazon Mobile Page Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

@@ -15,6 +15,8 @@ import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
 
 import com.Utilities.LogEntry;
+import com.aventstack.extentreports.Status;
+import com.extentReports.ExtentTestManager;
 
 //import io.github.bonigarcia.wdm.WebDriverManager;
 
@@ -38,7 +40,10 @@ public class BaseTest {
 		driver = new ChromeDriver(options);
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(7));
+		
 		LogEntry.log("Opening the browser");
+//		ExtentTestManager.getTest().log(Status.PASS, "Opening the browser");
+		
 		
 		prop = new Properties();
 		FileInputStream src = new FileInputStream("./Configuration/config.properties");
@@ -47,6 +52,7 @@ public class BaseTest {
 		
 		driver.navigate().to(Url);
 		LogEntry.log("Navigating to the url : " + Url);
+//		ExtentTestManager.getTest().log(Status.PASS, "Navigating to the url : " + Url);
 		
 	}
 	
@@ -55,6 +61,7 @@ public class BaseTest {
 		
 		driver.quit();
 		LogEntry.log("Browser closed");
+		ExtentTestManager.getTest().log(Status.PASS, "Browser closed");
 		try {
 			Desktop.getDesktop().browse(new File("C:\\Users\\102612\\eclipse-workspace\\Amazon\\extent-reports\\extent-report.html").toURI());
 		} catch (IOException e) {

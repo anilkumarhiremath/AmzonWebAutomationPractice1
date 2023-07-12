@@ -1,10 +1,6 @@
 package com.listeners;
 
-import java.awt.Desktop;
-import java.io.File;
-import java.io.IOException;
 import java.util.Objects;
-
 
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -21,8 +17,6 @@ import com.logs.Log;
 import com.testCases.BaseTest;
 
 public class TestListener extends BaseTest implements ITestListener {
-	
-//	public ExtentTestManager etm;
 	
     private static String getTestMethodName(ITestResult iTestResult) {
         return iTestResult.getMethod().getConstructorOrMethod().getName();
