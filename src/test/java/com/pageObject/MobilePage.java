@@ -16,7 +16,7 @@ public class MobilePage {
 		this.driver = driver;
 	}
 	
-	@FindBy(xpath = "//div[@class='sg-col-inner']/following::span[contains(text(),'Samsung Galaxy M04 Light Green')][4]")
+	@FindBy(xpath = "(//div[@class='sg-col-inner']/following::span[contains(text(),'Samsung Galaxy M04 Light Green')][4])[1]")
 	WebElement samsungMobile;
 	
 	@FindBy(xpath = "//input[@id='buy-now-button']")

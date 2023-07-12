@@ -1,7 +1,5 @@
 package com.testCases;
 
-import java.awt.Desktop;
-import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.time.Duration;
@@ -33,7 +31,7 @@ public class BaseTest {
 	public void setUp() throws IOException {
 		
 //		WebDriverManager.chromedriver().setup();
-		System.setProperty("webdriver.chrome.driver", "C:\\Users\\102612\\Softwares\\chromedriver.exe");
+//		System.setProperty("webdriver.chrome.driver", "C:\\Users\\102612\\Softwares\\chromedriver.exe");
 		ChromeOptions options = new ChromeOptions();
 		options.addArguments("--remote-allow-origins=*");
 		
@@ -62,12 +60,12 @@ public class BaseTest {
 		driver.quit();
 		LogEntry.log("Browser closed");
 		ExtentTestManager.getTest().log(Status.PASS, "Browser closed");
-		try {
-			Desktop.getDesktop().browse(new File("C:\\Users\\102612\\eclipse-workspace\\Amazon\\extent-reports\\extent-report.html").toURI());
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+//		try {
+//			Desktop.getDesktop().browse(new File("C:\\Users\\102612\\eclipse-workspace\\Amazon\\extent-reports\\extent-report.html").toURI());
+//		} catch (IOException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
 	}
 	
 }
